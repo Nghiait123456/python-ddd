@@ -1,0 +1,14 @@
+{% extends "base.html.j2" %} 
+
+{% block title %} 카테고리 목록 {% endblock %} 
+
+{% block content %}
+<h3>카테고리 목록</h3>
+<ul>
+  {% for category in categories %}
+  <li><a href="{{ url_for('catalog.category_products', category_id=category.id) }}">
+    {{category.name}}
+  </a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
